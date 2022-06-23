@@ -64,9 +64,9 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         // @formatter:off
         http
-//            .csrf()
-//            .disable()
-//            .addFilterBefore(corsFilter, UsernamePasswordAuthenticationFilter.class)
+            .csrf()
+            .disable()
+            .addFilterBefore(corsFilter, UsernamePasswordAuthenticationFilter.class)
             .exceptionHandling()
                 .authenticationEntryPoint(problemSupport)
                 .accessDeniedHandler(problemSupport)
