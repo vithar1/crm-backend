@@ -1,0 +1,33 @@
+{
+  "applications": ["crm"],
+  "changelogDate": "20220623112418",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "category",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Category",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "categories",
+      "ownerSide": true,
+      "relationshipName": "products",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no",
+  "skipClient": true
+}

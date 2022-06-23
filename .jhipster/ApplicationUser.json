@@ -1,0 +1,30 @@
+{
+  "applications": ["crm"],
+  "changelogDate": "20220623112118",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "application_user",
+  "fields": [],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "ApplicationUser",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "applicationUser",
+      "ownerSide": true,
+      "relationshipName": "user",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "applicationUser",
+      "relationshipName": "orders",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "no",
+  "skipClient": true
+}

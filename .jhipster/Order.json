@@ -1,0 +1,44 @@
+{
+  "applications": ["crm"],
+  "changelogDate": "20220623112518",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "jhi_order",
+  "fields": [
+    {
+      "fieldName": "acceptTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "completeTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "OrderStatus",
+      "fieldValues": "GOING,ACCEPTED,COMPLETED"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Order",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "orders",
+      "ownerSide": true,
+      "relationshipName": "products",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "applicationUser",
+      "otherEntityRelationshipName": "orders",
+      "relationshipName": "applicationUser",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no",
+  "skipClient": true
+}

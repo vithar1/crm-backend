@@ -1,0 +1,68 @@
+{
+  "applications": ["crm"],
+  "changelogDate": "20220623112218",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "product",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "amount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "availability",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "views",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "discountPrice",
+      "fieldType": "Integer"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Product",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "category",
+      "otherEntityRelationshipName": "products",
+      "ownerSide": false,
+      "relationshipName": "categories",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "image",
+      "otherEntityRelationshipName": "products",
+      "ownerSide": false,
+      "relationshipName": "images",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityName": "order",
+      "otherEntityRelationshipName": "products",
+      "ownerSide": false,
+      "relationshipName": "orders",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no",
+  "skipClient": true
+}

@@ -1,0 +1,29 @@
+{
+  "applications": ["crm"],
+  "changelogDate": "20220623112318",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "image",
+  "fields": [
+    {
+      "fieldName": "imageURL",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Image",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "images",
+      "ownerSide": true,
+      "relationshipName": "products",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "no",
+  "skipClient": true
+}

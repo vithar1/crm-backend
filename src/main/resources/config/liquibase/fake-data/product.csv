@@ -1,0 +1,11 @@
+id;name;description;price;amount;availability;views;discount_price
+1;Steel;../fake-data/blob/hipster.txt;31485;98311;true;74211;57374
+2;monetize Consultant wireless;../fake-data/blob/hipster.txt;16316;9665;true;89830;76808
+3;deposit Track actuating;../fake-data/blob/hipster.txt;64964;8294;true;44573;6255
+4;Metal;../fake-data/blob/hipster.txt;83023;40879;true;57853;43291
+5;throughput;../fake-data/blob/hipster.txt;46442;91058;true;82822;27988
+6;withdrawal green;../fake-data/blob/hipster.txt;70316;51217;false;32770;54278
+7;Ball Small;../fake-data/blob/hipster.txt;78661;16911;false;56622;70336
+8;aggregate Security Data;../fake-data/blob/hipster.txt;35518;58781;true;20505;80377
+9;JSON;../fake-data/blob/hipster.txt;55869;61482;true;20809;12092
+10;Cape;../fake-data/blob/hipster.txt;27546;52784;false;47574;66238
