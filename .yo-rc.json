@@ -22,7 +22,7 @@
     "entities": ["ApplicationUser", "Product", "Image", "Category", "Order"],
     "entitySuffix": "",
     "gradleEnterpriseHost": "",
-    "herokuAppName": "crm",
+    "herokuAppName": "sleepy-sierra-72344",
     "herokuDeployType": "git",
     "herokuJavaVersion": "11",
     "jhiPrefix": "jhi",
