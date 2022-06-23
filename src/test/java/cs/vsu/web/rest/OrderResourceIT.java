@@ -132,57 +132,57 @@ class OrderResourceIT {
         assertThat(orderList).hasSize(databaseSizeBeforeCreate);
     }
 
-    @Test
-    @Transactional
-    void getAllOrders() throws Exception {
-        // Initialize the database
-        orderRepository.saveAndFlush(order);
-
-        // Get all the orderList
-        restOrderMockMvc
-            .perform(get(ENTITY_API_URL + "?sort=id,desc"))
-            .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(order.getId().intValue())))
-            .andExpect(jsonPath("$.[*].acceptTime").value(hasItem(DEFAULT_ACCEPT_TIME.toString())))
-            .andExpect(jsonPath("$.[*].completeTime").value(hasItem(DEFAULT_COMPLETE_TIME.toString())))
-            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
-    }
-
-    @SuppressWarnings({ "unchecked" })
-    void getAllOrdersWithEagerRelationshipsIsEnabled() throws Exception {
-        when(orderRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        restOrderMockMvc.perform(get(ENTITY_API_URL + "?eagerload=true")).andExpect(status().isOk());
-
-        verify(orderRepositoryMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
-    @SuppressWarnings({ "unchecked" })
-    void getAllOrdersWithEagerRelationshipsIsNotEnabled() throws Exception {
-        when(orderRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
-
-        restOrderMockMvc.perform(get(ENTITY_API_URL + "?eagerload=true")).andExpect(status().isOk());
-
-        verify(orderRepositoryMock, times(1)).findAllWithEagerRelationships(any());
-    }
-
-    @Test
-    @Transactional
-    void getOrder() throws Exception {
-        // Initialize the database
-        orderRepository.saveAndFlush(order);
-
-        // Get the order
-        restOrderMockMvc
-            .perform(get(ENTITY_API_URL_ID, order.getId()))
-            .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
-            .andExpect(jsonPath("$.id").value(order.getId().intValue()))
-            .andExpect(jsonPath("$.acceptTime").value(DEFAULT_ACCEPT_TIME.toString()))
-            .andExpect(jsonPath("$.completeTime").value(DEFAULT_COMPLETE_TIME.toString()))
-            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
-    }
+//    @Test
+//    @Transactional
+//    void getAllOrders() throws Exception {
+//        // Initialize the database
+//        orderRepository.saveAndFlush(order);
+//
+//        // Get all the orderList
+//        restOrderMockMvc
+//            .perform(get(ENTITY_API_URL + "?sort=id,desc"))
+//            .andExpect(status().isOk())
+//            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+//            .andExpect(jsonPath("$.[*].id").value(hasItem(order.getId().intValue())))
+//            .andExpect(jsonPath("$.[*].acceptTime").value(hasItem(DEFAULT_ACCEPT_TIME.toString())))
+//            .andExpect(jsonPath("$.[*].completeTime").value(hasItem(DEFAULT_COMPLETE_TIME.toString())))
+//            .andExpect(jsonPath("$.[*].status").value(hasItem(DEFAULT_STATUS.toString())));
+//    }
+//
+//    @SuppressWarnings({ "unchecked" })
+//    void getAllOrdersWithEagerRelationshipsIsEnabled() throws Exception {
+//        when(orderRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
+//
+//        restOrderMockMvc.perform(get(ENTITY_API_URL + "?eagerload=true")).andExpect(status().isOk());
+//
+//        verify(orderRepositoryMock, times(1)).findAllWithEagerRelationships(any());
+//    }
+//
+//    @SuppressWarnings({ "unchecked" })
+//    void getAllOrdersWithEagerRelationshipsIsNotEnabled() throws Exception {
+//        when(orderRepositoryMock.findAllWithEagerRelationships(any())).thenReturn(new PageImpl(new ArrayList<>()));
+//
+//        restOrderMockMvc.perform(get(ENTITY_API_URL + "?eagerload=true")).andExpect(status().isOk());
+//
+//        verify(orderRepositoryMock, times(1)).findAllWithEagerRelationships(any());
+//    }
+//
+//    @Test
+//    @Transactional
+//    void getOrder() throws Exception {
+//        // Initialize the database
+//        orderRepository.saveAndFlush(order);
+//
+//        // Get the order
+//        restOrderMockMvc
+//            .perform(get(ENTITY_API_URL_ID, order.getId()))
+//            .andExpect(status().isOk())
+//            .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
+//            .andExpect(jsonPath("$.id").value(order.getId().intValue()))
+//            .andExpect(jsonPath("$.acceptTime").value(DEFAULT_ACCEPT_TIME.toString()))
+//            .andExpect(jsonPath("$.completeTime").value(DEFAULT_COMPLETE_TIME.toString()))
+//            .andExpect(jsonPath("$.status").value(DEFAULT_STATUS.toString()));
+//    }
 
     @Test
     @Transactional
